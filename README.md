@@ -153,6 +153,7 @@ la estructura de archivos del demo es:
     |   |----- Providers
     |   |----- Services
     |-- routes
+    |-- .env
 
 
 Al hacer get a la url
