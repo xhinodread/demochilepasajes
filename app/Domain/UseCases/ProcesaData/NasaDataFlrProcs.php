@@ -12,7 +12,6 @@ class NasaDataFlrProcs{
     public array $activityID;
 
     public function __construct(array $data) {
-        // echo "NasaDataGstProcs __construct: <pre>".print_r($data, 1)."</pre>";
  
          $this->id = $data['flrID'] ?? '';
          $this->instruments = $data['instruments'] ?? [];
@@ -25,8 +24,6 @@ class NasaDataFlrProcs{
 
         foreach($this->instruments as $indiceDatos){
             foreach($this->activityID as $indiceActivityID){
-              //  echo "instruments: <pre>".print_r($indiceDatos['displayName'], 1)."</pre>";
-               // echo "activityID: <pre>".print_r($indiceActivityID['activityID'], 1)."</pre>";
 
                 $objDatos_[] = [
                     'id'=> $this->id, 

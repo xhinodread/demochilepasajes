@@ -38,11 +38,11 @@ class GetNasaData{
     public function execute(): array {
 
         if(count($this->request->query) != 2){
-            return [];
+            return ['required' =>'startDate, endDate'];
         }
 
         if( strlen($this->request->query('startDate')) <1 || strlen($this->request->query('endDate')) <1 ){
-            return [];
+            return ['required' =>'startDate, endDate'];
         }
 
         try {
@@ -109,7 +109,6 @@ class GetNasaData{
                 }
             }
 
-            /************ CREA EL LISTADO **************************** */
 
             if(count($nasaDataGst)>0){
                 foreach ($nasaDataGst as $datos) {
@@ -185,7 +184,6 @@ class GetNasaData{
            }
 
 
-           /********CALCULOS********************** */
            $instrUsados = new GetInstrUsados($nasaData); 
            $listaInstr = $instrUsados->procesa_instruments();
            $resultListaInstr = array_unique($listaInstr);

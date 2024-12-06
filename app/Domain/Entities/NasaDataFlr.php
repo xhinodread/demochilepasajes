@@ -13,7 +13,6 @@ class NasaDataFlr{
         $this->instruments = $data['instruments'] ?? '';
         $this->activityID = $data['activityID'] ?? '';
         $this->idActividad = $data['idActividad'] ?? '';
-        // ... mapear el resto de los atributos ................
     }
 
 }

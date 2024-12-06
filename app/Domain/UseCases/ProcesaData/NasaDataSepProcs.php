@@ -12,7 +12,6 @@ class NasaDataSepProcs{
     public array $activityID;
 
     public function __construct(array $data) {
-       // echo "NasaDataSepProcs __construct: <pre>".print_r($data, 1)."</pre>";
  
          $this->id = $data['sepID'] ?? '';
          $this->instruments = $data['instruments'] ?? [];
@@ -25,9 +24,6 @@ class NasaDataSepProcs{
 
         foreach($this->instruments as $indiceDatos){
             foreach($this->activityID as $indiceActivityID){
-              //  echo "instruments: <pre>".print_r($indiceDatos['displayName'], 1)."</pre>";
-              //  echo "activityID: <pre>".print_r($indiceActivityID['activityID'], 1)."</pre>";
-               /***/
                 $objDatos[] = new NasaDataSep([
                     'id'=> $this->id, 
                     'instruments'=> $indiceDatos['displayName'],
